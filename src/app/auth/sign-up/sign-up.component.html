@@ -1,0 +1,52 @@
+<div class="auth-wrapper">
+    <div class="background-shape shape-1"></div>
+    <div class="background-shape shape-2"></div>
+
+    <div class="auth-card glass-effect">
+        <div class="card-header">
+            <h2>Créer un Compte</h2>
+            <p class="subtitle">Espace Commerçant Étranger</p>
+        </div>
+
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="text" formControlName="firstName" placeholder=" " required>
+                    <label>Prénom</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="text" formControlName="lastName" placeholder=" " required>
+                    <label>Nom</label>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="email" formControlName="email" placeholder=" " required>
+                <label>Adresse Email</label>
+            </div>
+
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="password" formControlName="password" placeholder=" " required>
+                    <label>Mot de passe</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="password" formControlName="confirmPassword" placeholder=" " required>
+                    <label>Confirmation</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" [disabled]="signUpForm.invalid">
+                <span>S'inscrire</span>
+                <div class="btn-icon">➜</div>
+            </button>
+
+            <div class="auth-footer">
+                <p>Déjà inscrit ? <a routerLink="/auth/sign-in">Se connecter</a></p>
+            </div>
+        </form>
+    </div>
+</div>

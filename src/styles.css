@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Red Theme Variables */
+:root {
+    --primary-red: #c0392b;
+    --dark-red: #96281b;
+    --text-dark: #2c3e50;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+}

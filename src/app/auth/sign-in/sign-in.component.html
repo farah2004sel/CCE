@@ -1,0 +1,37 @@
+<div class="auth-wrapper">
+    <div class="background-shape shape-1"></div>
+    <div class="background-shape shape-2"></div>
+
+    <div class="auth-card glass-effect">
+        <div class="card-header">
+            <h2>Connexion</h2>
+            <p class="subtitle">Espace Commerçant Étranger</p>
+        </div>
+
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-wrapper">
+                <input type="email" formControlName="email" placeholder=" " required>
+                <label>Adresse Email</label>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="password" formControlName="password" placeholder=" " required>
+                <label>Mot de passe</label>
+            </div>
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+
+            <button type="submit" class="btn-submit" [disabled]="signInForm.invalid">
+                <span>Se connecter</span>
+                <div class="btn-icon">➜</div>
+            </button>
+
+            <div class="auth-footer">
+                <p>Pas encore de compte ? <a routerLink="/auth/sign-up">S'inscrire</a></p>
+            </div>
+        </form>
+    </div>
+</div>
